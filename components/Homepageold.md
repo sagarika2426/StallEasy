@@ -1,4 +1,4 @@
-  {/* <section className="py-20 bg-white">
+  <section className="py-20 bg-white">
         <div className="max-w-6xl mx-auto px-4">
             <div className="text-center mb-16">
                 <h2 className="text-4xl font-bold text-gray-900 mb-4">Why Choose Stall Easy?</h2>
@@ -72,4 +72,10 @@
             </div>
             <p className="text-gray-400 text-sm">© 2025 Stall Easy. All rights reserved.</p>
         </div>
-    </footer> */}
+    </footer>
+
+
+    
+
+
+    
