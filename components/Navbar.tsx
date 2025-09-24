@@ -9,7 +9,6 @@ import {
 import { useState } from "react";
 
 const Navbar = () => {
-  const [isOpen, setIsOpen] = useState(false);
 
   return (
     <nav className="bg-white shadow-md sticky top-0 z-50">
@@ -42,41 +41,7 @@ const Navbar = () => {
         </div>
       </div>
 
-      {/* Mobile Menu */}
-      {isOpen && (
-        <div className="md:hidden bg-white shadow-md border-t">
-          <div className="flex flex-col space-y-4 px-6 py-4">
-            <a href="#" className="text-gray-700 hover:text-blue-600 transition">
-              Home
-            </a>
-            <a href="#" className="text-gray-700 hover:text-blue-600 transition">
-              Events
-            </a>
-            <a href="#" className="text-gray-700 hover:text-blue-600 transition">
-              Pricing
-            </a>
-            <a href="#" className="text-gray-700 hover:text-blue-600 transition">
-              About
-            </a>
-
-            <SignedOut>
-              <SignInButton mode="modal">
-                <button className="w-full px-5 py-2 rounded-lg border border-gray-300 text-gray-700 hover:bg-gray-100 transition text-sm font-medium">
-                  Sign In
-                </button>
-              </SignInButton>
-              <SignUpButton mode="modal">
-                <button className="w-full px-6 py-2 rounded-lg bg-gradient-to-r from-blue-600 to-indigo-600 text-white font-semibold hover:opacity-90 transition text-sm">
-                  Sign Up
-                </button>
-              </SignUpButton>
-            </SignedOut>
-            <SignedIn>
-              <UserButton afterSignOutUrl="/" />
-            </SignedIn>
-          </div>
-        </div>
-      )}
+   
     </nav>
   );
 };

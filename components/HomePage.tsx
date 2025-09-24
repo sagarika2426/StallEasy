@@ -103,7 +103,7 @@ const HomePage = () => {
               </h3>
               <p className="text-gray-600">
                 Make informed decisions with real reviews from other D2C brands
-                who've participated in events.
+                who&apos;ve participated in events.
               </p>
             </div>
           </div>
