@@ -6,10 +6,8 @@ import {
   SignUpButton,
   UserButton,
 } from "@clerk/nextjs";
-import { useState } from "react";
 
 const Navbar = () => {
-
   return (
     <nav className="bg-white shadow-md sticky top-0 z-50">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -33,15 +31,14 @@ const Navbar = () => {
                 </button>
               </SignUpButton>
             </SignedOut>
+
             <SignedIn>
+              {/* 👇 This shows profile avatar & dropdown */}
+              <UserButton afterSignOutUrl="/" />
             </SignedIn>
           </div>
-
-    
         </div>
       </div>
-
-   
     </nav>
   );
 };
