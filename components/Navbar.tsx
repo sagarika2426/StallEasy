@@ -5,9 +5,14 @@ import {
   SignInButton,
   SignUpButton,
   UserButton,
+  useUser,
 } from "@clerk/nextjs";
+import { useRouter } from "next/navigation"; // ✅ Correct import
 
 const Navbar = () => {
+  const { user } = useUser();
+  const router = useRouter();
+
   return (
     <nav className="bg-white shadow-md sticky top-0 z-50">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -33,7 +38,18 @@ const Navbar = () => {
             </SignedOut>
 
             <SignedIn>
-              {/* 👇 This shows profile avatar & dropdown */}
+              {/* Show Create Events button only for stalleasy1@gmail.com */}
+              {user?.primaryEmailAddress?.emailAddress ===
+                "stalleasy1@gmail.com" && (
+                <button
+                  onClick={() => router.push("/create-event")} // ✅ Works with next/navigation
+                  className="px-5 py-2 rounded-full bg-green-600 text-white font-medium hover:bg-green-700 transition text-sm"
+                >
+                  Create Events
+                </button>
+              )}
+
+              {/* Profile avatar & dropdown */}
               <UserButton afterSignOutUrl="/" />
             </SignedIn>
           </div>

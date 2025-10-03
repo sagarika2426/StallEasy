@@ -1,6 +1,11 @@
-import { SignInButton } from "@clerk/nextjs";
+"use client";
+import { SignedIn, SignedOut, SignInButton, useUser } from "@clerk/nextjs";
+import { useRouter } from "next/navigation";
+
 
 const HomePage = () => {
+    const router = useRouter();
+
   return (
     <>
       <section className="bg-gradient-to-br from-blue-50 to-indigo-100 py-20">
@@ -13,11 +18,24 @@ const HomePage = () => {
             Discover and book stalls at the best events for your D2C brand. From
             college fests to trade shows, find your perfect audience.
           </p>
+          <SignedOut>
           <SignInButton mode="modal">
-  <button className="bg-blue-600 text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-blue-700 transform hover:scale-105 transition-all">
-    Sign In to Browse Events
-  </button>
-</SignInButton>
+            <button className="bg-blue-600 text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-blue-700 transform hover:scale-105 transition-all">
+              Sign In to Browse Events
+            </button>
+          </SignInButton>
+        </SignedOut>
+
+        {/* Logged In */}
+        <SignedIn>
+          <button
+            onClick={() => router.push("/browse")}
+            className="bg-blue-600 text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-blue-700 transform hover:scale-105 transition-all"
+          >
+            Browse Events
+          </button>
+        </SignedIn>
+
         </div>
       </section>
       <section className="py-20 bg-white">
