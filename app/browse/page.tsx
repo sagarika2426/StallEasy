@@ -21,20 +21,26 @@ const EventListingPage = () => {
       ? events
       : events.filter((event) => event.category === selectedCategory);
 
+  interface Event {
+    date: string;
+    rating?: number;
+    footfall: string | number;
+    price: string | number;
+  }
+
   const sortedEvents = useMemo(() => {
     // helper parsers
-    const parseNumberFromString = (s) =>
+    const parseNumberFromString = (s: string | number): number =>
       parseInt(String(s).replace(/\D/g, ""), 10) || 0;
 
-    const parsePriceMin = (priceStr) => {
+    const parsePriceMin = (priceStr: string | number): number => {
       // match first number (handles "₹25,000 - ₹45,000" or "25000 - 45000")
       const match = String(priceStr).match(/(\d[\d,]*)/);
       return match ? parseInt(match[1].replace(/,/g, ""), 10) : 0;
     };
 
-    return [...filteredEvents].sort((a, b) => {
+    return [...filteredEvents].sort((a: Event, b: Event) => {
       if (sortBy === "date") {
-        // ← FIX: use getTime() so TypeScript sees numbers
         return new Date(a.date).getTime() - new Date(b.date).getTime();
       }
 
