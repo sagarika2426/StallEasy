@@ -18,12 +18,14 @@ const Navbar = () => {
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
-          <div className="text-2xl font-extrabold bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">
+          <div className="text-2xl font-extrabold bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent"
+           onClick={() => router.push("/")}>
             Stall Easy
+            
           </div>
 
           {/* Auth Buttons */}
-          <div className="hidden md:flex items-center gap-4">
+          <div className="md:flex items-center gap-4">
             <SignedOut>
               <SignInButton mode="modal">
                 <button className="px-5 py-2 rounded-full border border-gray-300 text-gray-700 hover:bg-gray-100 transition text-sm font-medium">

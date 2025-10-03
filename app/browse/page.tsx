@@ -86,7 +86,7 @@ const EventListingPage = () => {
               <label className="text-sm font-semibold text-gray-700 mb-3 block">
                 Filter by Category
               </label>
-              <div className="flex gap-2 overflow-x-auto pb-2">
+              <div className="flex gap-2 overflow-x-auto pb-2 flex-wrap">
                 {categories.map((category) => (
                   <button
                     key={category}
@@ -143,9 +143,13 @@ const EventListingPage = () => {
               {/* Event Image */}
               <div className="relative h-56 overflow-hidden bg-gray-200">
                 <img
-                  src={event.image}
+                  src={event.image || "/fallback-image.jpg"} // fallback if event.image is empty
                   alt={event.name}
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                  onError={(e) => {
+                    (e.currentTarget as HTMLImageElement).src =
+                      "/fallback-image.jpg"; // fallback if image fails to load
+                  }}
                 />
                 <div className="absolute top-4 right-4 bg-white/90 px-3 py-1 rounded-full shadow">
                   <div className="flex items-center">
