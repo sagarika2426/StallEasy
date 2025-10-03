@@ -14,7 +14,6 @@ const CreateEventForm = () => {
     image: "",
   });
 
-
   const categories = [
     "Technology",
     "Education",
@@ -50,7 +49,7 @@ const CreateEventForm = () => {
                 Create New Event
               </div>
 
-              <h1 className="text-5xl font-bold text-gray-900 leading-tight">
+              <h1 className="text-4xl md:text-5xl font-bold text-gray-900 leading-tight">
                 List Your Event &
                 <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
                   {" "}
@@ -58,14 +57,14 @@ const CreateEventForm = () => {
                 </span>
               </h1>
 
-              <p className="text-xl text-gray-600 leading-relaxed">
+              <p className="text-lg md:text-xl text-gray-600 leading-relaxed">
                 Showcase your event to thousands of D2C brands looking for the
                 perfect venue to connect with their audience.
               </p>
             </div>
 
             {/* Feature Cards */}
-            <div className="space-y-4">
+            <div className="space-y-4 md:space-y-4">
               <div className="flex items-start bg-white rounded-2xl p-6 shadow-sm border border-gray-100 hover:shadow-md transition-all">
                 <div className="bg-blue-100 rounded-xl p-3 mr-4">
                   <svg
@@ -164,9 +163,9 @@ const CreateEventForm = () => {
           </div>
 
           {/* Right Side - Form Section */}
-          <div className="bg-white shadow-2xl rounded-3xl p-8 lg:p-10 border border-gray-100">
-            <div className="mb-8">
-              <h2 className="text-3xl font-bold text-gray-900 mb-2">
+          <div className="bg-white shadow-2xl rounded-3xl p-6 lg:p-10 border border-gray-100">
+            <div className="mb-4 lg:mb-8">
+              <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-2">
                 Event Details
               </h2>
               <p className="text-gray-600">
@@ -288,9 +287,7 @@ const CreateEventForm = () => {
               </div>
 
               {/* Submit Button */}
-              <button
-                className="w-full bg-gradient-to-r from-blue-600 to-blue-700 text-white py-4 rounded-xl font-bold text-lg hover:from-blue-700 hover:to-blue-800 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-[1.02] flex items-center justify-center"
-              >
+              <button className="w-full bg-gradient-to-r from-blue-600 to-blue-700 text-white py-4 rounded-xl font-bold text-lg hover:from-blue-700 hover:to-blue-800 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-[1.02] flex items-center justify-center">
                 Create Event Listing
                 <svg
                   className="w-5 h-5 ml-2"
@@ -307,8 +304,6 @@ const CreateEventForm = () => {
                 </svg>
               </button>
             </div>
-
-    
           </div>
         </div>
       </div>
